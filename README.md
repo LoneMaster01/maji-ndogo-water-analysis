@@ -69,6 +69,17 @@ numbers ready for President Naledi's commendation messages:
 
 Full audit narrative: see [`02_data_quality_audit.sql`](02_data_quality_audit.sql).
 
+### Part 3 — Forensic Analysis: The Auditor's Report
+
+After the initial water access analysis, an independent audit was conducted to verify the integrity of the surveyor data. By joining the auditor's re-examined scores to the original surveyor scores via the `visits` table, I identified **102 records** where the recorded water quality score did not match the independent audit.
+
+Using CTEs to calculate the average number of mistakes per employee, I filtered for surveyors with an above-average error rate. Cross-referencing their records with the auditor's raw field statements revealed a clear pattern of bribery and corruption ("cash" mentions).
+
+**The Evidence:**
+Four field surveyors (Bello Azibo, Zuriel Matembo, Malachi Mavuso, and Lalitha Kaburi) were identified as suspects. They accounted for the highest number of incorrect scores, and *only* these four had statements alleging bribery. 
+
+You can review the forensic queries here: [`10_corruption_evidence.sql`](10_corruption_evidence.sql).
+
 ## Key findings
 
 - **60% of water sources are rural** — repair teams face harder logistics
